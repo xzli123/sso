@@ -1,0 +1,25 @@
+server:
+  port: 8082
+  session:
+    timeout: 1800
+
+#2.x版本中由于引入了不同客户端，需要指定配置哪种连接池
+#jedis客户端
+spring:
+  session:
+    store-type: redis
+    redis:
+      namespace: client2
+  cache:
+    type: redis
+  redis:
+    host: 145.170.23.210
+    port: 6379
+    timeout: 0
+    database: 2
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    password: 123456
